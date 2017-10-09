@@ -6,18 +6,22 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const config = require('./config/database');
 
+// Connect to MongoDB
 mongoose.connect(config.database);
 
+// Listen connection
 mongoose.connection.on("connected", () => {
-    console.log('Connected to database' + config.database)
+    console.log('Connected to database: ' + config.database)
 });
 
+// Listen error
+mongoose.connection.on("error", (err) => {
+    console.log("Database connection: " + err)
+})
+
 const app = express();
-
 const port = 4000;
-
 const users = require('./routes/users');
-
 
 // Cors
 app.use(cors());
