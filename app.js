@@ -27,14 +27,20 @@ const users = require('./routes/users');
 app.use(cors());
 
 // Client Folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Body Parser
 app.use(bodyParser.json());
 
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 app.use("/users", users);
 
-// Route
+// Router
 app.get("/", (req, res) => {
    res.send("Homepage")
 });
