@@ -16,9 +16,9 @@ import { FlashMessagesModule } from "angular2-flash-messages";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'profile', component: ProfileComponent},
-  {path:'dashboard', component: DashboardComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'register', component: RegisterComponent}
 ];
 
