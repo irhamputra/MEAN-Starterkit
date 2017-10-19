@@ -5,13 +5,14 @@ import 'rxjs/Rx'
 @Injectable()
 export class AuthService {
   authToken: any;
-  user: any
+  user: any;
 
   constructor(private http:Http) { }
 
   registerUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    // make HTTP Connection
     return this.http.post('http://localhost:4000/users/register', user, {headers: headers})
       .map(res => res.json());
   }

@@ -26,11 +26,11 @@ router.post("/register", (req, res, next) => {
                 msg: 'User registered'
             })
         }
-    })
+    });
 });
 
 router.get("/authenticate", (req, res, next) => {
-    res.send("Auth")
+    res.send("AUTH")
 });
 
 router.post("/authenticate", (req, res, next) => {
@@ -47,7 +47,7 @@ router.post("/authenticate", (req, res, next) => {
             if (err) throw err;
             if (isMatch){
                 const token = jwt.sign({data: user}, config.secret, {
-                    expiresIn: 604800
+                    expiresIn: 259200000
                 });
 
                 res.json({

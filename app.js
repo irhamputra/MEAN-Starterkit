@@ -17,7 +17,7 @@ mongoose.connection.on("connected", () => {
 // Listen error
 mongoose.connection.on("error", (err) => {
     console.log("Database connection: " + err)
-})
+});;;;;;;;;;
 
 const app = express();
 const port = 4000;
@@ -42,7 +42,7 @@ app.use("/users", users);
 
 // Router
 app.get("/", (req, res) => {
-   res.send("Homepage")
+   res.send("Hello world, welcome to backend MEAN-Starterkit")
 });
 
 // Server
